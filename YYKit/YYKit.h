@@ -11,10 +11,11 @@
 
 #import <Foundation/Foundation.h>
 
-#if __has_include(<YYKit/YYKit.h>)
+#if __has_include(<YYKit/YYKit.h>)  //  如果引入了 YYKit.h 就编译，否则就编译 else 后面的
 
-FOUNDATION_EXPORT double YYKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
+// FOUNDATION_EXPORT 一种声明常量的方式
+FOUNDATION_EXPORT double YYKitVersionNumber;  /** 版本号*/
+FOUNDATION_EXPORT const unsigned char YYKitVersionString[];  /** 版本号字符串数组*/
 
 #import <YYKit/YYKitMacro.h>
 #import <YYKit/NSObject+YYAdd.h>
@@ -50,20 +51,24 @@ FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
 #import <YYKit/CALayer+YYAdd.h>
 #import <YYKit/YYCGUtilities.h>
 
+/** 高性能的 iOS JSON 模型框架 */
 #import <YYKit/NSObject+YYModel.h>
 #import <YYKit/YYClassInfo.h>
 
+/** 高性能的 iOS 缓存框架 */
 #import <YYKit/YYCache.h>
 #import <YYKit/YYMemoryCache.h>
 #import <YYKit/YYDiskCache.h>
 #import <YYKit/YYKVStorage.h>
 
+/** 功能强大的 iOS 图像框架 */
 #import <YYKit/YYImage.h>
 #import <YYKit/YYFrameImage.h>
 #import <YYKit/YYSpriteSheetImage.h>
 #import <YYKit/YYAnimatedImageView.h>
 #import <YYKit/YYImageCoder.h>
 #import <YYKit/YYImageCache.h>
+/** 高性能的 iOS 异步图像加载框架 */
 #import <YYKit/YYWebImageOperation.h>
 #import <YYKit/YYWebImageManager.h>
 #import <YYKit/UIImageView+YYWebImage.h>
@@ -71,6 +76,7 @@ FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
 #import <YYKit/MKAnnotationView+YYWebImage.h>
 #import <YYKit/CALayer+YYWebImage.h>
 
+/** 功能强大的 iOS 富文本框架 */
 #import <YYKit/YYLabel.h>
 #import <YYKit/YYTextView.h>
 #import <YYKit/YYTextAttribute.h>
@@ -90,6 +96,7 @@ FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
 #import <YYKit/YYTextSelectionView.h>
 #import <YYKit/YYTextMagnifier.h>
 #import <YYKit/YYTextEffectWindow.h>
+/** iOS 键盘监听管理工具 */
 #import <YYKit/YYTextKeyboardManager.h>
 
 #import <YYKit/YYReachability.h>
@@ -99,14 +106,17 @@ FOUNDATION_EXPORT const unsigned char YYKitVersionString[];
 #import <YYKit/YYWeakProxy.h>
 #import <YYKit/YYTimer.h>
 #import <YYKit/YYTransaction.h>
+/** iOS 异步绘制与显示的工具 */
 #import <YYKit/YYAsyncLayer.h>
 #import <YYKit/YYSentinel.h>
+/** iOS 全局并发队列管理工具 */
 #import <YYKit/YYDispatchQueuePool.h>
 #import <YYKit/YYThreadSafeArray.h>
 #import <YYKit/YYThreadSafeDictionary.h>
 
 #else
 
+/** 功能丰富的 Category 类型工具库 */
 #import "YYKitMacro.h"
 #import "NSObject+YYAdd.h"
 #import "NSObject+YYAddForKVO.h"
