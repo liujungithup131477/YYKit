@@ -15,17 +15,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Provide some data-model method:
+ 提供一些数据模型的方法：
  
  * Convert json to any object, or convert any object to json.
+ * 将 json 转化成任何对象，或者将任何对象转化为 json。
  * Set object properties with a key-value dictionary (like KVC).
+ * 设置对象的属性的键-值 字典（如 KVC）。
  * Implementations of `NSCoding`, `NSCopying`, `-hash` and `-isEqual:`.
+ * 实现`NSCoding`, `NSCopying`协议, `-hash` and `-isEqual:`方法。
  
  See `YYModel` protocol for custom methods.
+ * 见 `YYModel` 协议自定义方法。
  
  
  Sample Code:
+ * 示例代码：
     
      ********************** json convertor *********************
+     ********************** json 转换器     *********************
      @interface YYAuthor : NSObject
      @property (nonatomic, strong) NSString *name;
      @property (nonatomic, assign) NSDate *birthday;
@@ -43,9 +50,11 @@ NS_ASSUME_NONNULL_BEGIN
     
      int main() {
          // create model from json
+         // 从 json 创建模型
          YYBook *book = [YYBook modelWithJSON:@"{\"name\": \"Harry Potter\", \"pages\": 256, \"author\": {\"name\": \"J.K.Rowling\", \"birthday\": \"1965-07-31\" }}"];
  
          // convert model to json
+         // 将模型转换为 json
          NSString *json = [book modelToJSONString];
          // {"author":{"name":"J.K.Rowling","birthday":"1965-07-31T00:00:00+0000"},"name":"Harry Potter","pages":256}
      }
@@ -57,23 +66,32 @@ NS_ASSUME_NONNULL_BEGIN
      @end
  
      @implementation YYShadow
+     // 归档
      - (void)encodeWithCoder:(NSCoder *)aCoder { [self modelEncodeWithCoder:aCoder]; }
+     // 解档
      - (id)initWithCoder:(NSCoder *)aDecoder { self = [super init]; return [self modelInitWithCoder:aDecoder]; }
+     // copy 操作
      - (id)copyWithZone:(NSZone *)zone { return [self modelCopy]; }
+     // hash 操作
      - (NSUInteger)hash { return [self modelHash]; }
+     // 判断模型对象是否相同
      - (BOOL)isEqual:(id)object { return [self modelIsEqual:object]; }
      @end
  
  */
+
 @interface NSObject (YYModel)
 
 /**
  Creates and returns a new instance of the receiver from a json.
  This method is thread-safe.
+ // 创建并且返回一个根据 json 实例的模型对象。是线程安全的。
  
  @param json  A json object in `NSDictionary`, `NSString` or `NSData`.
+ // 参数 json json 对象是一个`NSDictionary`, `NSString` or `NSData`。
  
  @return A new instance created from the json, or nil if an error occurs.
+ // 返回值： 创建一个新的模型实例对象根据 json， 或者 nil 如果出现错误。
  */
 + (nullable instancetype)modelWithJSON:(id)json;
 
