@@ -415,10 +415,13 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  If you need to create instances of different classes during json->object transform,
  use the method to choose custom class based on dictionary data.
+ *如果你需要创建不同的类的实例在 json->object 转换过程中，使用下面的方法选择自定义类基于字典的数据。
  
  @discussion If the model implements this method, it will be called to determine resulting class
  during `+modelWithJSON:`, `+modelWithDictionary:`, conveting object of properties of parent objects 
  (both singular and containers via `+modelContainerPropertyGenericClass`).
+ *如果模型实现这个方法，它将在执行`+modelWithJSON:`, `+modelWithDictionary:`方法时确定模型属性所对应的模型类。
+ 转换对象的父对象的属性（单独的和容器类通过 `+modelContainerPropertyGenericClass`）。
  
  Example:
         @class YYCircle, YYRectangle, YYLine;
@@ -440,8 +443,10 @@ NS_ASSUME_NONNULL_BEGIN
         @end
 
  @param dictionary The json/kv dictionary.
+ *参数 dictionary json/kv 字典。
  
  @return Class to create from this dictionary, `nil` to use current class.
+ *返回值，根据参数字典创建对应的模型class，‘nil’ 使用当前 class。
 
  */
 + (nullable Class)modelCustomClassForDictionary:(NSDictionary*)dictionary;
