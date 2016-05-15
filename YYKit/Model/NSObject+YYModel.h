@@ -262,8 +262,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Description method for debugging purposes based on properties.
+ *为了调试的方便基于模型属性的描述方法。
  
  @return A string that describes the contents of the receiver.
+ *返回值：返回模型内容的字符串描述。
  */
 - (NSString *)modelDescription;
 
