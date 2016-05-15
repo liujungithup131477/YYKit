@@ -98,18 +98,24 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Creates and returns a new instance of the receiver from a key-value dictionary.
  This method is thread-safe.
+ * 通过一个键值-字典创建和返回一个新的模型实例。这个方法是线程安全的。
  
  @param dictionary  A key-value dictionary mapped to the instance's properties.
  Any invalid key-value pair in dictionary will be ignored.
+ *参数 dictionary 通过一个键值-字典映射到实例对象属相。任何字典中无效的键值对都会被忽略。
  
  @return A new instance created from the dictionary, or nil if an error occurs.
+ *返回值 返回根据一个字典创建的新的实例对象，或者如果发生错误返回 nil。
  
  @discussion The key in `dictionary` will mapped to the reciever's property name,
  and the value will set to the property. If the value's type does not match the
  property, this method will try to convert the value based on these rules:
+ *此方法是根据字典的键值和对应的接收的模型的属性名做映射，并且赋值。如果值不能匹配属性，则方法
+ 将根据以下规则尝试转换：
  
      `NSString` or `NSNumber` -> c number, such as BOOL, int, long, float, NSUInteger...
      `NSString` -> NSDate, parsed with format "yyyy-MM-dd'T'HH:mm:ssZ", "yyyy-MM-dd HH:mm:ss" or "yyyy-MM-dd".
+     *NSString` -> NSDate, 带"yyyy-MM-dd'T'HH:mm:ssZ", "yyyy-MM-dd HH:mm:ss" or "yyyy-MM-dd"格式的转换。
      `NSString` -> NSURL.
      `NSValue` -> struct or union, such as CGRect, CGSize, ...
      `NSString` -> SEL, Class.

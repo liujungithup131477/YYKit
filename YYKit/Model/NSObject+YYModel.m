@@ -605,6 +605,7 @@ static force_inline id YYValueForMultiKeys(__unsafe_unretained NSDictionary *dic
 }
 
 /// Returns the cached model class meta
+/// 返回缓存的元模型类
 + (instancetype)metaWithClass:(Class)cls {
     if (!cls) return nil;
     static CFMutableDictionaryRef cache;
@@ -1413,7 +1414,7 @@ static NSString *ModelDescription(NSObject *model) {
 @implementation NSObject (YYModel)
 
 + (NSDictionary *)_yy_dictionaryWithJSON:(id)json {
-    if (!json || json == (id)kCFNull) return nil;
+    if (!json || json == (id)kCFNull) return nil;  // kCFNull null 类型的对象
     NSDictionary *dic = nil;
     NSData *jsonData = nil;
     if ([json isKindOfClass:[NSDictionary class]]) {
