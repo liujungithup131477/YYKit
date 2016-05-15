@@ -331,15 +331,19 @@ NS_ASSUME_NONNULL_BEGIN
  If the default model transform does not fit to your model class, implement one or
  more method in this protocol to change the default key-value transform process.
  There's no need to add '<YYModel>' to your class header.
+ *如果默认的模型变换方法不适合你模型的类，实现一个或更多的在这个协议中的方法更改默认的键值转换过程。
+ *这就没必要增加'<YYModel>'到你的类前面。
  */
 @protocol YYModel <NSObject>
 @optional
 
 /**
  Custom property mapper.
+ *自定义属性映射器。
  
  @discussion If the key in JSON/Dictionary does not match to the model's property name,
  implements this method and returns the additional mapper.
+ *如果 JSON/Dictionary 的键值不匹配模型的属性名，实现下面的这个方法并返回额外的映射。
  
  Example:
     
@@ -371,15 +375,19 @@ NS_ASSUME_NONNULL_BEGIN
         @end
  
  @return A custom mapper for properties.
+ *返回值 返回一个自定义的属性的映射。
  */
 + (nullable NSDictionary<NSString *, id> *)modelCustomPropertyMapper;
 
 /**
  The generic class mapper for container properties.
+ *容器类属性的类映射。
  
  @discussion If the property is a container object, such as NSArray/NSSet/NSDictionary,
  implements this method and returns a property->class mapper, tells which kind of 
  object will be add to the array/set/dictionary.
+ *如果模型的属性是一个容器对象，例如NSArray/NSSet/NSDictionary,实现这个方法并且返回属性的类映射，
+ 告诉哪一种对象将被添加到array/set/dictionary。
  
   Example:
         @class YYShadow, YYBorder, YYAttachment;
@@ -400,6 +408,7 @@ NS_ASSUME_NONNULL_BEGIN
         @end
  
  @return A class mapper.
+ *返回值 返回一个类的映射。
  */
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass;
 
