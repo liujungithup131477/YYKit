@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
  // 创建并且返回一个根据 json 实例的模型对象。是线程安全的。
  
  @param json  A json object in `NSDictionary`, `NSString` or `NSData`.
- // 参数 json json 对象是一个`NSDictionary`, `NSString` or `NSData`。
+ // 参数 json 一个json对象在“NSDictionary”,“NSString”或“NSData”。
  
  @return A new instance created from the json, or nil if an error occurs.
  // 返回值： 创建一个新的模型实例对象根据 json， 或者 nil 如果出现错误。
@@ -275,18 +275,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Provide some data-model method for NSArray.
+ * YYModel 模型框架对 NSArray 类的扩展提供了一些数据模型的方法。
  */
 @interface NSArray (YYModel)
 
 /**
  Creates and returns an array from a json-array.
+ *根据 json 数组创建并且返回一个模型数组。
  This method is thread-safe.
+ *这个方法是线程安全的。
  
  @param cls  The instance's class in array.
+ *参数 cls 是模型数组中保存的模型类的类型。
  @param json  A json array of `NSArray`, `NSString` or `NSData`.
+              Example: [{"name","Mary"},{name:"Joe"}]
+ *参数 json 一个 json 数组的`NSArray`, `NSString` or `NSData`。
               Example: [{"name","Mary"},{name:"Joe"}]
  
  @return A array, or nil if an error occurs.
+ *返回值 一个数组，或则 nil 如果出现错误。
  */
 + (nullable NSArray *)modelArrayWithClass:(Class)cls json:(id)json;
 
@@ -296,18 +303,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Provide some data-model method for NSDictionary.
+  * YYModel 模型框架对 NSDictionary 类的扩展提供了一些数据模型的方法。
  */
 @interface NSDictionary (YYModel)
 
 /**
  Creates and returns a dictionary from a json.
+ *根据一个 json 创建并且返回一个字典对象。
  This method is thread-safe.
+ *这个方法是线程安全的。
  
  @param cls  The value instance's class in dictionary.
+ *参数 cls 字典的值实例的类。
  @param json  A json dictionary of `NSDictionary`, `NSString` or `NSData`.
               Example: {"user1":{"name","Mary"}, "user2": {name:"Joe"}}
- 
+ *参数 json json字典的‘NSDictionary’,‘NSString’或‘NSData’。
+              Example: {"user1":{"name","Mary"}, "user2": {name:"Joe"}}
  @return A array, or nil if an error occurs.
+ *返回值 一个模型字典，或则 nil 如果出现错误。
  */
 + (nullable NSDictionary *)modelDictionaryWithClass:(Class)cls json:(id)json;
 @end
