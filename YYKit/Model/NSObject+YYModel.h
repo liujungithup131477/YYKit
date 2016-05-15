@@ -250,10 +250,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Compares the receiver with another object for equality, based on properties.
+ *比较一个模型和另一个模型是否相等，基于属性。
  
  @param model  Another object.
+ *参数 model 另一个模型。
  
  @return `YES` if the reciever is equal to the object, otherwise `NO`.
+ *返回值 如果两个模型相同返回 ‘YES’,否则返回‘NO’。
  */
 - (BOOL)modelIsEqual:(id)model;
 
