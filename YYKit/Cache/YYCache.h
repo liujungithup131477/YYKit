@@ -203,7 +203,7 @@ NS_ASSUME_NONNULL_BEGIN
  Removes the value of the specified key in the cache.
  *在缓存中移除指定键的值。
  This method may blocks the calling thread until file delete finished.
- *这种方法可能会阻塞调用线程,直到文件写入完成。
+ *这种方法可能会阻塞调用线程,直到文件删除完成。
  
  @param key The key identifying the value to be removed. If nil, this method has no effect.
  *确定要删除的值的key。如果为 nil ,这种方法没有效果。
