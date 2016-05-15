@@ -140,21 +140,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Set the receiver's properties with a key-value dictionary.
+ *通过字典设置模型的属性。
  
  @param dic  A key-value dictionary mapped to the receiver's properties.
  Any invalid key-value pair in dictionary will be ignored.
+ *参数 dic 通过字典映射到对应的模型的属性。任何无效的字典的键值对都将被忽略。
  
  @discussion The key in `dictionary` will mapped to the reciever's property name,
  and the value will set to the property. If the value's type doesn't match the
  property, this method will try to convert the value based on these rules:
+ *此方法是根据字典的键值和对应的接收的模型的属性名做映射，并且赋值。如果值不能匹配属性，则方法
+ 将根据以下规则尝试转换：
  
      `NSString`, `NSNumber` -> c number, such as BOOL, int, long, float, NSUInteger...
      `NSString` -> NSDate, parsed with format "yyyy-MM-dd'T'HH:mm:ssZ", "yyyy-MM-dd HH:mm:ss" or "yyyy-MM-dd".
+     *NSString` -> NSDate, 带"yyyy-MM-dd'T'HH:mm:ssZ", "yyyy-MM-dd HH:mm:ss" or "yyyy-MM-dd"格式的转换。
      `NSString` -> NSURL.
      `NSValue` -> struct or union, such as CGRect, CGSize, ...
      `NSString` -> SEL, Class.
  
  @return Whether succeed.
+ *返回值 是否成功。
  */
 - (BOOL)modelSetWithDictionary:(NSDictionary *)dic;
 
