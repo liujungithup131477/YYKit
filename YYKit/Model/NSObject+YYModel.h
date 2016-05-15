@@ -124,13 +124,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Set the receiver's properties with a json object.
+ *通过 json 设置接收者的属性。
  
  @discussion Any invalid data in json will be ignored.
+ *此方法会将无效的 json 数据忽略。
  
  @param json  A json object of `NSDictionary`, `NSString` or `NSData`, mapped to the
  receiver's properties.
+ *参数 json 一个 字典，字符串，二进制的 json 对象转换到对应的模型对象。
  
  @return Whether succeed.
+ *返回值 返回是否成功。
  */
 - (BOOL)modelSetWithJSON:(id)json;
 
