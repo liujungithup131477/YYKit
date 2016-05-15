@@ -513,14 +513,18 @@ NS_ASSUME_NONNULL_BEGIN
  If the default model-to-json transform does not fit to your model class, implement
  this method to do additional process. You can also use this method to validate the
  json dictionary.
+ *如果默认model-to-json变换不适合你的模型类,实现这个方法去做额外的过程。你也可以使用这种方法来验证json字典。
  
  @discussion If the model implements this method, it will be called at the end of
  `-modelToJSONObject` and `-modelToJSONString`.
  If this method returns NO, the transform process will ignore this json dictionary.
+ *如果模型实现了这种方法,它将在“-modelToJSONObject”和“-modelToJSONString”之后被调用。
+ 如果这个方法返回 NO,转换过程将忽略这个json字典。
  
  @param dic  The json dictionary.
  
  @return Returns YES if the model is valid, or NO to ignore this model.
+ *如果模型是有效的返回YES，或者 NO 忽略这个模型。
  */
 - (BOOL)modelCustomTransformToDictionary:(NSMutableDictionary *)dic;
 
