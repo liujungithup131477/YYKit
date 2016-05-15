@@ -197,12 +197,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Generate a json string from the receiver's properties.
+ *根据模型的属性生成 json字符串。
  
  @return A json string, or nil if an error occurs.
+ *返回一个 json 字符串，或者 nil 如果发生错误。
  
  @discussion Any of the invalid property is ignored.
+ *任何无效的属性将被忽略。
  If the reciver is `NSArray`, `NSDictionary` or `NSSet`, it will also convert the 
  inner object to json string.
+ *如果模型是`NSArray`, `NSDictionary` or `NSSet`,它还将转换内部对象的 json 字符串。
  */
 - (nullable NSString *)modelToJSONString;
 
