@@ -492,6 +492,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDictionary *)modelCustomWillTransformFromDictionary:(NSDictionary *)dic;
 
 /**
+ // 当 JSON 转为 Model 完成后，该方法会被调用。
+ // 你可以在这里对数据进行校验，如果校验不通过，可以返回 NO，则该 Model 会被忽略。
+ // 你也可以在这里做一些自动转换不能完成的工作。
+ 
+ - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+ NSNumber *timestamp = dic[@"timestamp"];
+ if (![timestamp isKindOfClass:[NSNumber class]]) return NO;
+ _createdAt = [NSDate dateWithTimeIntervalSince1970:timestamp.floatValue];
+ return YES;
+ }
+ 
  If the default json-to-model transform does not fit to your model object, implement
  this method to do additional process. You can also use this method to validate the 
  model's properties.
@@ -510,6 +521,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic;
 
 /**
+ // 当 Model 转为 JSON 完成后，该方法会被调用。
+ // 你可以在这里对数据进行校验，如果校验不通过，可以返回 NO，则该 Model 会被忽略。
+ // 你也可以在这里做一些自动转换不能完成的工作。
+ 
+ - (BOOL)modelCustomTransformToDictionary:(NSMutableDictionary *)dic {
+ if (!_createdAt) return NO;
+ dic[@"timestamp"] = @(n.timeIntervalSince1970);
+ return YES;
+ }
+ 
  If the default model-to-json transform does not fit to your model class, implement
  this method to do additional process. You can also use this method to validate the
  json dictionary.
