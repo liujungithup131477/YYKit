@@ -176,19 +176,22 @@ NS_ASSUME_NONNULL_BEGIN
  *任何无效的属性将被忽略。
  If the reciver is `NSArray`, `NSDictionary` or `NSSet`, it just convert
  the inner object to json object.
- *如果接受者是 `NSArray`, `NSDictionary` or `NSSet` ，它也会将其内部的对象转换为 json 对象。
- 
+ *如果模型是 `NSArray`, `NSDictionary` or `NSSet` ，它只是转换内部对象的 json 对象。
  */
 - (nullable id)modelToJSONObject;
 
 /**
  Generate a json string's data from the receiver's properties.
+ *根据模型转换成 json 字符串的二进制数据。
  
  @return A json string's data, or nil if an error occurs.
+ *返回一个 json 字符串的二进制数据，如果出错就返回 nil。
  
  @discussion Any of the invalid property is ignored.
+ *任何无效的属性都将被忽略。
  If the reciver is `NSArray`, `NSDictionary` or `NSSet`, it will also convert the 
  inner object to json string.
+ *如果模型是`NSArray`, `NSDictionary` or `NSSet`,它还将转换内部对象的 json 字符串。
  */
 - (nullable NSData *)modelToJSONData;
 
