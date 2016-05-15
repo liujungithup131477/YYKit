@@ -221,15 +221,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Encode the receiver's properties to a coder.
+ *将模型对象的属性归档。
  
  @param aCoder  An archiver object.
+ *参数 aCoder 存储服务器对象。
  */
 - (void)modelEncodeWithCoder:(NSCoder *)aCoder;
 
 /**
  Decode the receiver's properties from a decoder.
+ *解档对应的模型属性。
  
  @param aDecoder  An archiver object.
+ *参数 aDecoder 存储服务器对象。
  
  @return self
  */
