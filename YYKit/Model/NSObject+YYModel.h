@@ -241,8 +241,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Get a hash code with the receiver's properties.
+ *获得一个模型属性的hash编码。
  
  @return Hash code.
+ *返回模型的 hash 编码。
  */
 - (NSUInteger)modelHash;
 
