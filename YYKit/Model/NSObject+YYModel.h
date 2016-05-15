@@ -212,8 +212,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Copy a instance with the receiver's properties.
+ *拷贝一个模型的实例对象。
  
  @return A copied instance, or nil if an error occurs.
+ *返回一个拷贝的实例对象，或者 nil 如果发生错误。
  */
 - (nullable id)modelCopy;
 
