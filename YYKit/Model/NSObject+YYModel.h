@@ -475,14 +475,19 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  This method's behavior is similar to `- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic;`, 
  but be called before the model transform.
+ *此方法的行为类似于”——(BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic;”,但在模型转换之前被调用。
  
  @discussion If the model implements this method, it will be called before
  `+modelWithJSON:`, `+modelWithDictionary:`, `-modelSetWithJSON:` and `-modelSetWithDictionary:`.
+ *如果模型实现了这个方法，它将在 '+modelWithJSON:`, `+modelWithDictionary:`, `-modelSetWithJSON:` and `-modelSetWithDictionary:`之前被调用。
  If this method returns nil, the transform process will ignore this model.
+ *如果这个方法返回 nil，在转换过程将忽略这个模型。
  
  @param dic  The json/kv dictionary.
+ *参数 dic json/kv dictionary.
  
  @return Returns the modified dictionary, or nil to ignore this model.
+ *返回值 返回修改后的字典，或者 nil 忽略这个模型。
  */
 - (NSDictionary *)modelCustomWillTransformFromDictionary:(NSDictionary *)dic;
 
