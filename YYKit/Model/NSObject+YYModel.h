@@ -454,8 +454,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  All the properties in blacklist will be ignored in model transform process.
  Returns nil to ignore this feature.
+ *黑名单中的所有属性在模型转换过程将被忽略。
+ 返回 nil 忽略这个功能。
  
  @return An array of property's name (Array<NSString>).
+ *返回值 一个属性名字的数组。
  */
 + (nullable NSArray<NSString *> *)modelPropertyBlacklist;
 
