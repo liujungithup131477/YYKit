@@ -465,8 +465,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  If a property is not in the whitelist, it will be ignored in model transform process.
  Returns nil to ignore this feature.
+ *如果属性不在白名单，在模型转换过程将被忽略。返回 nil 忽略这个功能。
  
  @return An array of property's name (Array<NSString>).
+ *返回值 返回一个属性名字的数组。
  */
 + (nullable NSArray<NSString *> *)modelPropertyWhitelist;
 
