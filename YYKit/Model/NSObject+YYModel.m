@@ -1503,10 +1503,15 @@ static NSString *ModelDescription(NSObject *model) {
 - (id)modelToJSONObject {
     /*
      Apple said:
+     *苹果说：
      The top level object is an NSArray or NSDictionary.
+     *对象的顶结点是一个数组或者字典。
      All objects are instances of NSString, NSNumber, NSArray, NSDictionary, or NSNull.
+     *所有的对象必须是NSString, NSNumber, NSArray, NSDictionary, or NSNull类型。
      All dictionary keys are instances of NSString.
+     *字典的键值类型必须是字符串。
      Numbers are not NaN or infinity.
+     *如果是数字则不能不是数字或无穷大。
      */
     id jsonObject = ModelToJSONObjectRecursive(self);
     if ([jsonObject isKindOfClass:[NSArray class]]) return jsonObject;

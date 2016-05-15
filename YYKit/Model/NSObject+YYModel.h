@@ -166,13 +166,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Generate a json object from the receiver's properties.
+ *根据模型的属性生成 json 对象。
  
  @return A json object in `NSDictionary` or `NSArray`, or nil if an error occurs.
  See [NSJSONSerialization isValidJSONObject] for more information.
+ *返回一个 json 对象 ，通过字典或数组转化，如果方式错误就返回 nil。看 [NSJSONSerialization isValidJSONObject] 方法的注释可以查看对应的转化条件。
  
  @discussion Any of the invalid property is ignored.
+ *任何无效的属性将被忽略。
  If the reciver is `NSArray`, `NSDictionary` or `NSSet`, it just convert
  the inner object to json object.
+ *如果接受者是 `NSArray`, `NSDictionary` or `NSSet` ，它也会将其内部的对象转换为 json 对象。
+ 
  */
 - (nullable id)modelToJSONObject;
 
