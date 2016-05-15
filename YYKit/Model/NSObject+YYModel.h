@@ -495,14 +495,17 @@ NS_ASSUME_NONNULL_BEGIN
  If the default json-to-model transform does not fit to your model object, implement
  this method to do additional process. You can also use this method to validate the 
  model's properties.
+ *如果默认json-to-model变换不适合你的模型对象,实现这个方法去做额外的过程。你也可以使用这种方法来验证模型的属性。
  
  @discussion If the model implements this method, it will be called at the end of
  `+modelWithJSON:`, `+modelWithDictionary:`, `-modelSetWithJSON:` and `-modelSetWithDictionary:`.
  If this method returns NO, the transform process will ignore this model.
+ *如果模型实现这个方法，它将在`+modelWithJSON:`, `+modelWithDictionary:`, `-modelSetWithJSON:` and `-modelSetWithDictionary:`之后被调用。如果这个方法返回 NO，转换过程这个模型将被忽略。
  
  @param dic  The json/kv dictionary.
  
  @return Returns YES if the model is valid, or NO to ignore this model.
+ *如果模型是有效的返回 YES,NO 忽略这个模型。
  */
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic;
 
