@@ -30,6 +30,7 @@
     CGFloat scale = 1;
     
     // If no extension, guess by system supported (same as UIImage).
+    // 如果没有扩展,想系统支持(像 UIImage 一样)。
     NSArray *exts = ext.length > 0 ? @[ext] : @[@"", @"png", @"jpeg", @"jpg", @"gif", @"webp", @"apng"];
     NSArray *scales = [NSBundle preferredScales];
     for (int s = 0; s < scales.count; s++) {
