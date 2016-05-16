@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface YYCache : NSObject
 
+// MARK: - 缓存类属性
 /** The name of the cache, readonly. 
  * 缓存的名称,只读的。
  */
@@ -43,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, readonly) YYDiskCache *diskCache;
 
+// MARK: - 初始化方法
 /**
  Create a new instance with the specified name.
  *用指定的名称创建一个新的缓存实例。
@@ -72,8 +74,10 @@ NS_ASSUME_NONNULL_BEGIN
  *返回值 返回一个新的缓存对象，或者 nil 如果方式错误。
  *NS_DESIGNATED_INITIALIZER 指定的初始化方法
  */
+// TODO: 指定初始化方法
 - (nullable instancetype)initWithPath:(NSString *)path NS_DESIGNATED_INITIALIZER;
 
+// MARK: - 便利构造函数
 /**
  Convenience Initializers
  *便利的初始化方法
@@ -107,6 +111,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable instancetype)cacheWithPath:(NSString *)path;
 
+// MARK: - 在该类中无效的创建方式
 /** 不可用的*/
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
@@ -116,6 +121,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Access Methods  访问方法
 ///=============================================================================
 
+// MARK: - 根据 key 来判断缓存中是否有对应的值
 /**
  Returns a boolean value that indicates whether a given key is in cache.
  *返回一个布尔值,根据给定的键值查看缓存中是否包含对应的缓存对象。
@@ -172,6 +178,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)objectForKey:(NSString *)key withBlock:(nullable void(^)(NSString *key, id<NSCoding> object))block;
 
+// MARK: - 对缓存的插入和删除操作
 /**
  Sets the value of the specified key in the cache.
  *根据指定的键值在缓存中设置值。
