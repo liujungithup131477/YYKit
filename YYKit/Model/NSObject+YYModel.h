@@ -82,6 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (YYModel)
 
+// MARK: - 创建模型的相关方法
 /**
  Creates and returns a new instance of the receiver from a json.
  This method is thread-safe.
@@ -164,6 +165,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)modelSetWithDictionary:(NSDictionary *)dic;
 
+// MARK: - 模型转 json 的相关方法
 /**
  Generate a json object from the receiver's properties.
  *根据模型的属性生成 json 对象。
@@ -210,6 +212,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSString *)modelToJSONString;
 
+// MARK: - Coding/Copying/hash/equal/description 相关操作
 /**
  Copy a instance with the receiver's properties.
  *拷贝一个模型的实例对象。
