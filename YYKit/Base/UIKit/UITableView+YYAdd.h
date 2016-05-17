@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param block  A block combine a series of method calls.
  */
+// MARK: - 更新 tableView
 - (void)updateWithBlock:(void (^)(UITableView *tableView))block;
 
 /**
@@ -57,6 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param animated        YES if you want to animate the change in position,
                         NO if it should be immediate.
  */
+// MARK: - 滚动到哪一组，哪一行
 - (void)scrollToRow:(NSUInteger)row inSection:(NSUInteger)section atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
 
 /**
@@ -69,6 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param animation  A constant that either specifies the kind of animation to
                    perform when inserting the cell or requests no animation. 
  */
+// MARK: - 在哪一组，哪一行插入
 - (void)insertRow:(NSUInteger)row inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -85,6 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
                    UITableViewRowAnimationRight, the old rows slide out to the 
                    right and the new cells slide in from the right.
  */
+// MARK: - 重新加载哪一组，哪一行
 - (void)reloadRow:(NSUInteger)row inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -97,6 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param animation  A constant that indicates how the deletion is to be animated, 
                    for example, fade out or slide out from the bottom.
  */
+// MARK: - 删除哪一组，哪一行
 - (void)deleteRow:(NSUInteger)row inSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -109,6 +114,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param animation  A constant that either specifies the kind of animation to
                    perform when inserting the cell or requests no animation.
  */
+// MARK: - 根据 indexPath 插入
 - (void)insertRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -124,6 +130,7 @@ NS_ASSUME_NONNULL_BEGIN
                   UITableViewRowAnimationRight, the old rows slide out to the
                   right and the new cells slide in from the right.
  */
+// MARK: - 根据 indexPath 重新加载
 - (void)reloadRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -136,6 +143,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param animation  A constant that indicates how the deletion is to be animated,
                    for example, fade out or slide out from the bottom.
  */
+// MARK: - 根据 indexPath 删除
 - (void)deleteRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -148,6 +156,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param animation  A constant that indicates how the insertion is to be animated, 
                    for example, fade in or slide in from the left.
  */
+// MARK: - 插入一组
 - (void)insertSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -160,6 +169,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param animation  A constant that either specifies the kind of animation to 
                    perform when deleting the section or requests no animation.
  */
+// MARK: - 删除一组
 - (void)deleteSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
 
 /**
@@ -174,8 +184,10 @@ NS_ASSUME_NONNULL_BEGIN
                    animation constant is UITableViewRowAnimationRight, the old 
                    rows slide out to the right and the new cells slide in from the right.
  */
+// MARK: - 重新加载一组
 - (void)reloadSection:(NSUInteger)section withRowAnimation:(UITableViewRowAnimation)animation;
 
+// MARK: - 清除所有选中的 cell
 /**
  Unselect all rows in tableView.
  
