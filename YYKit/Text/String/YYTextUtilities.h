@@ -22,6 +22,9 @@ YY_EXTERN_C_BEGIN
 NS_ASSUME_NONNULL_BEGIN
 
 /**
+ *  这是一个包含多个内联函数的类
+ */
+/**
  Whether the character is 'line break char':
  U+000D (\\r or CR)
  U+2028 (Unicode line separator)
