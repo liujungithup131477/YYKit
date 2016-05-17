@@ -18,23 +18,29 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface UIView (YYAdd)
 
+// MARK: - 创建 image 的快照
 /**
  Create a snapshot image of the complete view hierarchy.
+ *创建一个快照图像的完整视图层次结构。
  */
 - (nullable UIImage *)snapshotImage;
 
 /**
  Create a snapshot image of the complete view hierarchy.
+ *创建一个快照图像的完整视图层次结构。
  @discussion It's faster than "snapshotImage", but may cause screen updates.
+ *快速的屏幕快照，但是可能会导致屏幕更新。
  See -[UIView drawViewHierarchyInRect:afterScreenUpdates:] for more information.
  */
 - (nullable UIImage *)snapshotImageAfterScreenUpdates:(BOOL)afterUpdates;
 
+// MARK: - PDF 的快照
 /**
  Create a snapshot PDF of the complete view hierarchy.
  */
 - (nullable NSData *)snapshotPDF;
 
+// MARK: - 设置 view.layer's shadow
 /**
  Shortcut to set the view.layer's shadow
  
@@ -44,13 +50,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setLayerShadow:(nullable UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
 
+// MARK: - 删除视图的所有子控件
 /**
  Remove all subviews.
  
  @warning Never call this method inside your view's drawRect: method.
+ @warning 不能在view's drawRect: method 方法中调用这个方法。
  */
 - (void)removeAllSubviews;
 
+// MARK: - 扩展的UIView的计算型属性
 /**
  Returns the view's view controller (may be nil).
  */
@@ -61,6 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly) CGFloat visibleAlpha;
 
+// MARK: - 调整视图的层次结构
 /**
  Converts a point from the receiver's coordinate system to that of the specified view or window.
  
@@ -100,7 +110,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGRect)convertRect:(CGRect)rect fromViewOrWindow:(nullable UIView *)view;
 
-
+// MARK: - UIView 的 frame 值
 @property (nonatomic) CGFloat left;        ///< Shortcut for frame.origin.x.
 @property (nonatomic) CGFloat top;         ///< Shortcut for frame.origin.y
 @property (nonatomic) CGFloat right;       ///< Shortcut for frame.origin.x + frame.size.width
