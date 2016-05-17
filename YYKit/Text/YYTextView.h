@@ -28,9 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The YYTextViewDelegate protocol defines a set of optional methods you can use
  to receive editing-related messages for YYTextView objects. 
+ *YYTextViewDelegate代理协议定义了一组 optional 方法，你可以用这些协议方法接收 YYTextView 对象的相关编辑信息。
  
  @discussion The API and behavior is similar to UITextViewDelegate,
  see UITextViewDelegate's documentation for more information.
+ *API和行为类似于 UITextViewDelegate,有关更多信息,请参见 UITextViewDelegate 的文档。
  */
 @protocol YYTextViewDelegate <NSObject, UIScrollViewDelegate>
 @optional
@@ -51,21 +53,33 @@ NS_ASSUME_NONNULL_BEGIN
 
 #if !TARGET_INTERFACE_BUILDER
 
+// MARK: - YYTextView 的解释说明
 /**
  The YYTextView class implements the behavior for a scrollable, multiline text region.
+ *YYTextView类实现了一个可滚动的行为,多行文本区域。
  
  @discussion The API and behavior is similar to UITextView, but provides more features:
+ *API和行为类似于UITextView,但提供了更多的功能:
  
  * It extends the CoreText attributes to support more text effects.
+ *它扩展了CoreText属性来支持更多的文本效果。
  * It allows to add UIImage, UIView and CALayer as text attachments.
+ *它允许在文本附件中添加UIImage, UIView，CALayer。
  * It allows to add 'highlight' link to some range of text to allow user interact with.
+ *它允许添加“高亮”链接到一些允许用户与之交互的文本范围。
  * It allows to add exclusion paths to control text container's shape.
+ *它允许添加排除路径控制文本容器的形状。
  * It supports vertical form layout to display and edit CJK text.
+ *它支持垂直布局来显示和编辑CJK文本形式。
  * It allows user to copy/paste image and attributed text from/to text view.
+ *它允许用户复制/粘贴图像和文本属性从/到文本视图。
  * It allows to set an attributed text as placeholder.
+ *它允许设置一个文本占位符。
  
  See NSAttributedString+YYText.h for more convenience methods to set the attributes.
+ *查看NSAttributedString + YYText。用更方便的方法来设置属性。
  See YYTextAttribute.h and YYTextLayout.h for more information.
+ *看YYTextAttribute.h and YYTextLayout.h的更多信息。
  */
 @interface YYTextView : UIScrollView <UITextInput>
 
@@ -80,25 +94,31 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Configuring the Text Attributes
 ///=============================================================================
-/// @name Configuring the Text Attributes
+/// @name Configuring the Text Attributes  配置文本属性
 ///=============================================================================
 
 /**
  The text displayed by the text view.
  Set a new value to this property also replaces the text in `attributedText`.
  Get the value returns the plain text in `attributedText`.
+ *文本视图显示的文本内容。
+ *这个属性设置的内容会替换`attributedText`的内容。
+ *直接获取将获得的是`attributedText`的纯文本。
  */
 @property (null_resettable, nonatomic, copy) NSString *text;
 
 /**
  The font of the text. Default is 12-point system font.
+ *文本的文字大小。默认是12。
  Set a new value to this property also causes the new font to be applied to the entire `attributedText`.
+ *设置一个新值属性也导致新字体是应用于整个“attributedText”。
  Get the value returns the font at the head of `attributedText`.
  */
 @property (nullable, nonatomic, strong) UIFont *font;
 
 /**
  The color of the text. Default is black.
+ *文本的颜色。默认是黑色。
  Set a new value to this property also causes the new color to be applied to the entire `attributedText`.
  Get the value returns the color at the head of `attributedText`.
  */
@@ -106,6 +126,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The technique to use for aligning the text. Default is NSTextAlignmentNatural.
+ *文本的对齐方式。默认是 NSTextAlignmentNatural。
  Set a new value to this property also causes the new alignment to be applied to the entire `attributedText`.
  Get the value returns the alignment at the head of `attributedText`.
  */
@@ -113,12 +134,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The text vertical aligmnent in container. Default is YYTextVerticalAlignmentTop.
+ *设置文本的垂直对齐方式。默认是YYTextVerticalAlignmentTop。
  */
 @property (nonatomic) YYTextVerticalAlignment textVerticalAlignment;
 
 /**
  The types of data converted to clickable URLs in the text view. Default is UIDataDetectorTypeNone.
  The tap or long press action should be handled by delegate.
+ *敲击和长按事件由代理处理。
  */
 @property (nonatomic) UIDataDetectorTypes dataDetectorTypes;
 
@@ -301,7 +324,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Manage the undo and redo
 ///=============================================================================
-/// @name Manage the undo and redo
+/// @name Manage the undo and redo  管理撤销和重做
 ///=============================================================================
 
 /**
