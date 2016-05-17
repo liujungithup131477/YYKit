@@ -13,6 +13,7 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <netinet/in.h>
 
+// MARK: - 用于监控网络状态
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, YYReachabilityStatus) {
@@ -31,6 +32,7 @@ typedef NS_ENUM(NSUInteger, YYReachabilityWWANStatus) {
 
 /**
  `YYReachability` can used to monitor the network status of an iOS device.
+ *“YYReachability”可以用于监控一个iOS设备的网络状态。
  */
 @interface YYReachability : NSObject
 

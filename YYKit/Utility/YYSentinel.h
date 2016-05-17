@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// MARK: - 这个类可以用于多线程中的计数处理
 /**
  YYSentinel is a thread safe incrementing counter. 
  It may be used in some multi-threaded situation.
@@ -23,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly) int32_t value;
 
 /// Increase the value atomically.
+/// 自动增加值
 /// @return The new value.
 - (int32_t)increase;
 

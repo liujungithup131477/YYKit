@@ -13,8 +13,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// MARK: - 事务的相关处理
 /**
  YYTransaction let you perform a selector once before current runloop sleep.
+ *每次运行循环睡之前执行一次相关方法
  */
 @interface YYTransaction : NSObject
 

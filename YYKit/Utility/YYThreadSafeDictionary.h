@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
+// MARK: - 线程安全数组，将NSMutableDictionary变为线程安全的字典
 /**
  A simple implementation of thread safe mutable dictionary.
  

@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// MARK: - 时钟相关的操作
 /**
  YYTimer is a thread-safe timer based on GCD. It has similar API with `NSTimer`.
  YYTimer object differ from NSTimer in a few ways:

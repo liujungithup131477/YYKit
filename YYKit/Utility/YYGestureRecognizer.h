@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// MARK: - 用于手势处理时相关属性和方法
 /// State of the gesture
 typedef NS_ENUM(NSUInteger, YYGestureRecognizerState) {
     YYGestureRecognizerStateBegan, ///< gesture start

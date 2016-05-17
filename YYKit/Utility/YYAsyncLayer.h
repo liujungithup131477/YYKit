@@ -16,6 +16,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// MARK: - iOS 异步绘制与显示的工具类
 /**
  The YYAsyncLayer class is a subclass of CALayer used for render contents asynchronously.
  

@@ -16,6 +16,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// MARK: - iOS 全局并发队列管理工具
+
+/**
+ *  当某个 block 所在线程被锁住时，concurrent queue 会创建大量线程以至于占用了过多资源而影响到主线程。这里可以用一个全局的 serial queue pool 来尽量控制全局线程数。
+ */
 /**
  A dispatch queue pool holds multiple serial queues.
  Use this class to control queue's thread count (instead of concurrent queue).

@@ -863,7 +863,7 @@
 				D9B25FE11BEE79370038C00A /* Cache */,
 				D9B25FEA1BEE79370038C00A /* Image */,
 				D9B2600B1BEE79370038C00A /* Text */,
-				D9B260361BEE79370038C00A /* Utility */,
+				D9B260361BEE79370038C00A /* Utility（实用程序） */,
 			);
 			name = YYKit;
 			path = ../YYKit;
@@ -1091,7 +1091,7 @@
 			path = String;
 			sourceTree = "<group>";
 		};
-		D9B260361BEE79370038C00A /* Utility */ = {
+		D9B260361BEE79370038C00A /* Utility（实用程序） */ = {
 			isa = PBXGroup;
 			children = (
 				D9B260411BEE79370038C00A /* YYReachability.h */,
@@ -1119,6 +1119,7 @@
 				D9B260471BEE79370038C00A /* YYThreadSafeDictionary.h */,
 				D9B260481BEE79370038C00A /* YYThreadSafeDictionary.m */,
 			);
+			name = "Utility（\U0010\U0010实用程序）";
 			path = Utility;
 			sourceTree = "<group>";
 		};
