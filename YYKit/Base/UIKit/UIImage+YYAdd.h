@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Provide some commen method for `UIImage`.
  Image process is based on CoreGraphic and vImage.
+ *提供了一些对`UIImage`共同使用的方法。
+ *过程是基于CoreGraphic and vImage。
  */
 @interface UIImage (YYAdd)
 
@@ -24,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Create image
 ///=============================================================================
 
+// MARK: - GIF类型图片的处理
 /**
  Create an animated image with GIF data. After created, you can access
  the images via property '.images'. If the data is not animated gif, this
@@ -61,6 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)isAnimatedGIFFile:(NSString *)path;
 
+// MARK: - PDF类型图片的处理
 /**
  Create an image from a PDF file data or path.
  
@@ -88,6 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable UIImage *)imageWithPDF:(id)dataOrPath size:(CGSize)size;
 
+// MARK: - Emoji类型图片的处理
 /**
  Create a square image from apple emoji.
  
@@ -103,6 +108,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable UIImage *)imageWithEmoji:(NSString *)emoji size:(CGFloat)size;
 
+// MARK: - 根据颜色和大小创建图片
 /**
  Create and return a 1x1 point size image with the given color.
  
@@ -118,6 +124,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
 
+// MARK: - 画图片
 /**
  Create and return an image with custom draw code.
  
@@ -133,6 +140,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Image Info
 ///=============================================================================
 
+//TODO: - 有待研究
 /**
  Whether this image has alpha channel.
  */
@@ -295,7 +303,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Image Effect
 ///=============================================================================
-/// @name Image Effect
+/// @name Image Effect 图片效果
 ///=============================================================================
 
 /**
