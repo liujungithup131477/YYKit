@@ -236,6 +236,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - Configuring the Display Mode
+// MARK: - 配置显示模式
 ///=============================================================================
 /// @name Configuring the Display Mode
 ///=============================================================================
@@ -243,8 +244,10 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  A Boolean value indicating whether the layout and rendering codes are running
  asynchronously on background threads. 
+ *一个布尔值表示布局和渲染代码是否运行异步后台线程。
  
  The default value is `NO`.
+ *默认是 `NO`。
  */
 @property (nonatomic) BOOL displaysAsynchronously;
 
