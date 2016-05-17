@@ -43,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)removeAllSublayers;
 
+// MARK: - frame 的相关值
 @property (nonatomic) CGFloat left;        ///< Shortcut for frame.origin.x.
 @property (nonatomic) CGFloat top;         ///< Shortcut for frame.origin.y
 @property (nonatomic) CGFloat right;       ///< Shortcut for frame.origin.x + frame.size.width
@@ -56,6 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, getter=frameSize, setter=setFrameSize:) CGSize  size; ///< Shortcut for frame.size.
 
 
+// MARK: - 核心动画操作的相关属性
 @property (nonatomic) CGFloat transformRotation;     ///< key path "tranform.rotation"
 @property (nonatomic) CGFloat transformRotationX;    ///< key path "tranform.rotation.x"
 @property (nonatomic) CGFloat transformRotationY;    ///< key path "tranform.rotation.y"
@@ -79,6 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) UIViewContentMode contentMode;
 
+// MARK: - 设置淡出的动画
 /**
  Add a fade animation to layer's contents when the contents is changed.
  
