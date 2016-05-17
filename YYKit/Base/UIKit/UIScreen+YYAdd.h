@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface UIScreen (YYAdd)
 
+// MARK: -  Main screen's scale
 /**
  Main screen's scale
  
@@ -25,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (CGFloat)screenScale;
 
+// MARK: - 当前屏幕的 bounds
 /**
  Returns the bounds of the screen for the current device orientation.
  
@@ -33,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGRect)currentBounds NS_EXTENSION_UNAVAILABLE_IOS("");
 
+// MARK: - 根据屏幕朝向返回 bounds
 /**
  Returns the bounds of the screen for a given device orientation.
  `UIScreen`'s `bounds` method always returns the bounds of the
@@ -44,6 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation;
 
+// MARK: - 当前设备的屏幕的像素点
 /**
  The screen's real size in pixel (width is always smaller than height).
  This value may not be very accurate in an unknown device, or simulator.
@@ -51,6 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly) CGSize sizeInPixel;
 
+// MARK: - 屏幕每英寸的像素
 /**
  The screen's PPI.
  This value may not be very accurate in an unknown device, or simulator.
