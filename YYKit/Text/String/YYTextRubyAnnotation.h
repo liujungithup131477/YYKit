@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Wrapper for CTRubyAnnotationRef.
+ *CTRubyAnnotationRef包装器。
  
  Example:
  
