@@ -158,6 +158,7 @@ typedef NS_OPTIONS(NSUInteger, YYNetworkTrafficType) {
 /// @name CPU Information
 ///=============================================================================
 
+// MARK: - CPU 信息
 /// Avaliable CPU processor count.
 @property (nonatomic, readonly) NSUInteger cpuCount;
 

@@ -31,24 +31,28 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL isColorGlyphs NS_AVAILABLE_IOS(7_0); ///< Whether the font is color glyphs (such as Emoji).
 @property (nonatomic, readonly) CGFloat fontWeight NS_AVAILABLE_IOS(7_0); ///< Font weight from -1.0 to 1.0. Regular weight is 0.0.
 
+// MARK: - 粗体
 /**
  Create a bold font from receiver.
  @return A bold font, or nil if failed.
  */
 - (nullable UIFont *)fontWithBold NS_AVAILABLE_IOS(7_0);
 
+// MARK: - 斜体
 /**
  Create a italic font from receiver.
  @return A italic font, or nil if failed.
  */
 - (nullable UIFont *)fontWithItalic NS_AVAILABLE_IOS(7_0);
 
+// MARK: - 粗，斜体
 /**
  Create a bold and italic font from receiver.
  @return A bold and italic font, or nil if failed.
  */
 - (nullable UIFont *)fontWithBoldItalic NS_AVAILABLE_IOS(7_0);
 
+// MARK: - 正常的字体
 /**
  Create a normal (no bold/italic/...) font from receiver.
  @return A normal font, or nil if failed.
@@ -125,7 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)unloadFontFromData:(UIFont *)font;
 
 
-#pragma mark - Dump font data
+#pragma mark - Dump font data （字体转换为二进制）
 ///=============================================================================
 /// @name Dump font data
 ///=============================================================================
