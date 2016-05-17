@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface UIScrollView (YYAdd)
 
+// MARK: - 不带动画的滚动
 /**
  Scroll content to top with animation.
  */
@@ -41,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Scroll content to top.
  
+ //MARK: - 带动画的滚动
  @param animated  Use animation.
  */
 - (void)scrollToTopAnimated:(BOOL)animated;
