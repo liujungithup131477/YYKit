@@ -21,9 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The block that invoked when the item is selected. The objects captured by block
  will retained by the ButtonItem.
+ *item被选中的时候该block将被调用。item对象将被该block强引用。
  
  @discussion This param is conflict with `target` and `action` property.
+ *参数 这个参数是和`target` and `action`属性冲突的。
  Set this will set `target` and `action` property to some internal objects.
+ *设置这个block可以替换对应的`target` and `action`方法。
  */
 @property (nullable, nonatomic, copy) void (^actionBlock)(id);
 
