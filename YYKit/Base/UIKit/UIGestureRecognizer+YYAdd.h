@@ -13,6 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// MARK: - 手式事件 （block）的初始化，添加，删除
 /**
  Provides extensions for `UIGestureRecognizer`.
  */
