@@ -192,7 +192,7 @@ typedef void(^YYTextAction)(UIView *containerView, NSAttributedString *text, NSR
 @property (nonatomic) BOOL deleteConfirm; ///< confirm the range when delete in YYTextView
 @end
 
-
+// MARK: - 文本的阴影
 /**
  YYTextShadow objects are used by the NSAttributedString class cluster
  as the values for shadow attributes (stored in the attributed string under
@@ -213,7 +213,7 @@ typedef void(^YYTextAction)(UIView *containerView, NSAttributedString *text, NSR
 - (NSShadow *)nsShadow; ///< convert YYTextShadow to NSShadow
 @end
 
-
+// MARK: - 文本的装饰
 /**
  YYTextDecorationLine objects are used by the NSAttributedString class cluster
  as the values for decoration line attributes (stored in the attributed string under
@@ -232,6 +232,7 @@ typedef void(^YYTextAction)(UIView *containerView, NSAttributedString *text, NSR
 @end
 
 
+// MARK: - 文本的边框
 /**
  YYTextBorder objects are used by the NSAttributedString class cluster
  as the values for border attributes (stored in the attributed string under
@@ -258,7 +259,7 @@ typedef void(^YYTextAction)(UIView *containerView, NSAttributedString *text, NSR
 @property (nullable, nonatomic, strong) UIColor *fillColor;   ///< inner fill color
 @end
 
-
+// MARK: - 文本的附件
 /**
  YYTextAttachment objects are used by the NSAttributedString class cluster 
  as the values for attachment attributes (stored in the attributed string under 
@@ -277,7 +278,7 @@ typedef void(^YYTextAction)(UIView *containerView, NSAttributedString *text, NSR
 @property (nullable, nonatomic, strong) NSDictionary *userInfo; ///< The user information dictionary.
 @end
 
-
+// MARK: - 文本高亮
 /**
  YYTextHighlight objects are used by the NSAttributedString class cluster
  as the values for touchable highlight attributes (stored in the attributed string
@@ -292,53 +293,100 @@ typedef void(^YYTextAction)(UIView *containerView, NSAttributedString *text, NSR
 
 /**
  Attributes that you can apply to text in an attributed string when highlight.
+ *属性，可以被设置当高亮时突出文本中所在的字符串。
  Key:   Same as CoreText/YYText Attribute Name.
+ Key：  像CoreText/YYText中的属性名字。
  Value: Modify attribute value when highlight (NSNull for remove attribute).
+ Value：当高亮时改变属性的值（NSNull 删除属性）
  */
 @property (nullable, nonatomic, copy) NSDictionary<NSString *, id> *attributes;
 
 /**
  Creates a highlight object with specified attributes.
+ *用指定的属性创建高亮的对象。
  
  @param attributes The attributes which will replace original attributes when highlight,
         If the value is NSNull, it will removed when highlight.
+ *参数 attributes 当高亮时该对象将替换原始的对象，如果值是 NSNull，当高亮时它将删除。
  */
 + (instancetype)highlightWithAttributes:(nullable NSDictionary<NSString *, id> *)attributes;
 
 /**
  Convenience methods to create a default highlight with the specifeid background color.
+ *便利方法： 用指定的背景颜色创建默认的高亮效果。
  
  @param color The background border color.
  */
 + (instancetype)highlightWithBackgroundColor:(nullable UIColor *)color;
 
+// MARK: - 设置相关属性的便利方法
 // Convenience methods below to set the `attributes`.
+/**
+ *  设置大小
+ */
 - (void)setFont:(nullable UIFont *)font;
+/**
+ *  设置颜色
+ */
 - (void)setColor:(nullable UIColor *)color;
+/**
+ *  设置渲染宽度
+ */
 - (void)setStrokeWidth:(nullable NSNumber *)width;
+/**
+ *  设置渲染颜色
+ */
 - (void)setStrokeColor:(nullable UIColor *)color;
+/**
+ *  设置阴影
+ */
 - (void)setShadow:(nullable YYTextShadow *)shadow;
+/**
+ *  设置内部阴影
+ */
 - (void)setInnerShadow:(nullable YYTextShadow *)shadow;
+/**
+ *  设置下划线
+ */
 - (void)setUnderline:(nullable YYTextDecoration *)underline;
+/**
+ *  设置渲染
+ */
 - (void)setStrikethrough:(nullable YYTextDecoration *)strikethrough;
+/**
+ *  设置背景边框
+ */
 - (void)setBackgroundBorder:(nullable YYTextBorder *)border;
+/**
+ *  设置边框
+ */
 - (void)setBorder:(nullable YYTextBorder *)border;
+/**
+ *  设置附件
+ */
 - (void)setAttachment:(nullable YYTextAttachment *)attachment;
 
+// MARK: - 用户信息字典
 /**
  The user information dictionary, default is nil.
+ *用户信息字典，默认是 nil。
  */
 @property (nullable, nonatomic, copy) NSDictionary *userInfo;
 
+// MARK: - 用户点击和长按的执行block的属性设置
 /**
  Tap action when user tap the highlight, default is nil.
+ *当用户点击高亮的地方时的事件，默认是 nil。
  If the value is nil, YYTextView or YYLabel will ask it's delegate to handle the tap action.
+ *如果值为 nil，YYTextView or YYLabel 将会询问它的代理去处理点击事件。
  */
 @property (nullable, nonatomic, copy) YYTextAction tapAction;
 
 /**
  Long press action when user long press the highlight, default is nil.
+ *长按时间当用户长时间按高亮的地方，默认是 nil。
  If the value is nil, YYTextView or YYLabel will ask it's delegate to handle the long press action.
+ *如果这个值是 nil，YYTextView or YYLabel将询问它的的代理去处理长按时间。
  */
 @property (nullable, nonatomic, copy) YYTextAction longPressAction;
 
