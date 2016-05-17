@@ -18,11 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface UITextField (YYAdd)
 
+// MARK: - 选中所有的文本
 /**
  Set all text selected.
  */
 - (void)selectAllText;
 
+// MARK: - 选中文档中的某一部分
 /**
  Set text in range selected.
  
